@@ -23,8 +23,8 @@ public class ArraySumExample extends RecursiveAction {
     int low;
     int high;
     double ans = 0;
-    static int SIZE = 60_000_000; //size of the array
-    static int SeqentialThreshold = SIZE/500;
+    static int SIZE = 60_000_000; //size of the array, feel free to change it
+    static int SeqentialThreshold = SIZE/500; //or just keep it 5000 only ^^
     ArraySumExample (double[] arr,int low,int high)
     {
         this.arr = arr;
@@ -135,7 +135,7 @@ public class ArraySumExample extends RecursiveAction {
 
     public static void main(String[] args)
     {
-        System.out.println(Runtime.getRuntime().availableProcessors()/2); //output number of threads available
+        System.out.println("Number of processor"+ Runtime.getRuntime().availableProcessors()/2); //output number of processor available
         double [] arr = randomArray();
 
         double sumSeq = 0;
