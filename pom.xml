@@ -20,5 +20,12 @@
         </plugins>
     </build>
 
-
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/colt/colt -->
+        <dependency>
+            <groupId>net.sourceforge.parallelcolt</groupId>
+            <artifactId>parallelcolt</artifactId>
+            <version>0.10.0</version>
+        </dependency>
+    </dependencies>
 </project>
