@@ -34,7 +34,7 @@ public class ArraySumExample extends RecursiveAction {
 
     /**
      * This is the compute method, it's an interface that you must implement
-     * where in this task the decomposition of task and computation of it take place
+     * where in this method, the decomposition of task and computation of it take place
      * also in this function fork and join call's take place
      * @return Nothing (in case of RecursiveTask there is a return).
      */
