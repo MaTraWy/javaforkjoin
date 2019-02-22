@@ -1,13 +1,23 @@
 import cern.colt.matrix.tdouble.DoubleMatrix2D;
 import cern.colt.matrix.tdouble.algo.DenseDoubleAlgebra;
 import cern.colt.matrix.tdouble.impl.DenseDoubleMatrix2D;
-
 import java.util.Random;
+
+/**
+ * <h1>Array multiplication  using parallelColt library </h1>
+ * <p>
+ * Colt provides a set of Open Source Libraries for High Performance Scientific and Technical Computing in Java.
+ * find more at https://dst.lbl.gov/ACSSoftware/colt
+ * we will use the parallel version of library for matrix multiplication
+ *</p>
+ * @author  Mahmoud Matrawy
+ * @version 1.0
+ * @since   2018/2/20
+ */
 
 public class ParallelColt {
     public static void main(String[] args) {
-        //DoubleMatrix2D X = DoubleFactory2D.dense.random(5000, 5000);
-        //DoubleMatrix2D Y = DoubleFactory2D.dense.random(5000, 5000);
+
         int row = 2000;
         int col = 2000;
         int val_1;

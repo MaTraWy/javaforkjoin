@@ -7,11 +7,12 @@ import java.util.concurrent.RecursiveAction;
  * The Array sum using java fork  program implements an application that
  * sum the numbers in array where each number is divided by 3 to increase computation.
  * <p>
- * The purpose of this project is for parallel programming tut, such that java fork join framework exploits
- * the multi core processor where it divide the array (task) into sub-array (sub task) and distribute
- * this task across the cores of processor with the help of work stealing algorithm that discussed early
- * in the section, where we are expecting to solve computation extensive problem in fast way on multi core rather than running on one core
+ * The purpose of this project is for parallel programming tut, where the java fork-join framework exploits
+ * the multi-core processor where it divides the array (task) into sub-array (subtask) and distributes
+ * this sub-tasks across the cores of the processor with the help of work stealing algorithm that discussed early
+ * in the section, where we are expecting to solve computation extensive problem in a fast way on multicore rather than running on one core
  *</p>
+ *
  * @author  Mahmoud Matrawy
  * @version 1.0
  * @since   2018/2/20
@@ -35,7 +36,7 @@ public class ArraySumExample extends RecursiveAction {
      * This is the compute method, it's an interface that you must implement
      * where in this task the decomposition of task and computation of it take place
      * also in this function fork and join call's take place
-     * @return Nothing (in case of RecursiveTask there is an return).
+     * @return Nothing (in case of RecursiveTask there is a return).
      */
     protected void compute()
     {
@@ -60,16 +61,16 @@ public class ArraySumExample extends RecursiveAction {
             ans = left.ans + right.ans;  //here we aggregate the sum
 
             //please check again the section ppt slides if found this function is complex to understand.
-            //if you want further understanding please check the fork join white paper(research paper)
+            //if you want further understanding please check the fork-join white paper(research paper)
         }
     }
 
 
     /**
-     * This is the seqArraySum method where we do the sequential solve for sum problem
-     * where we do here the all computation on the same core
-     * @param arr the array we want to compute it's elements
-     * @return totallTime it return how much time the traditional way of solving this problem take time.
+     * This is the seqArraySum method where we do the sequential solve for array summation problem
+     * where we do here the all computation on the same core (traditional way)
+     * @param arr the array we want to compute its elements
+     * @return totallTime it returns how much time the traditional way of solving this problem takes.
      */
     public static double seqArraySum(double[] arr)
     {
@@ -86,9 +87,9 @@ public class ArraySumExample extends RecursiveAction {
 
     /**
      * This is the parArraySum method where we do the parallel way to solve array sum problem
-     * where we do here is we call the fork join frame work for parallel computing
-     * @param arr the array we want to compute it's elements
-     * @return totallTime it return how much time the parallel computing way of solving this problem take time.
+     * where we do here is we call the fork-join framework for parallel computing
+     * @param arr the array we want to compute its elements
+     * @return totallTime it returns how much time the parallel computing way of solving this problem takes time.
      */
     public static double parArraySum(double[] arr)
     {
@@ -103,11 +104,11 @@ public class ArraySumExample extends RecursiveAction {
     }
 
     /**
-     * This is the printResult method where we print data to console in a good formatted way
-     * %8.3f which exsists in printf, the 8 in 8.3f refer to 8 slots for entire number, the .3 in 8.3f refer
-     * to number of decimal allowed after the dot, the f in 8.3f refer to float, it's a way to formate the putput
-     * @param name which indicate which one is calling this function, the parallel or Sequential sum
-     * @param totallTime the time it taken to do the sum operation
+     * This is the printResult method where we print data to console in a well formatted way
+     * %8.3f which exists in printf, the 8 in 8.3f refer to 8 slots for entire number, the .3 in 8.3f refer
+     * to a number of decimal part allowed after the dot, the f in 8.3f refer to float, it's a way to format the output
+     * @param name which indicates which one is calling this function, the parallel or Sequential sum
+     * @param totallTime the time it has taken to do the sum operation
      * @param sum the resulting sum
      * @return none
      */
@@ -149,8 +150,8 @@ public class ArraySumExample extends RecursiveAction {
         sumSeq = sumSeq / 5;
         sumParr = sumParr /5;
 
-        //speed up define how much the computation is accelerated using the parallel way (multicore), remember we will reach
-        // ideal parallelism becasuse we have other programs working with us ^_^ ^_^.
+        //speed up define how much the computation is accelerated using the parallel way (multicore), remember we will not reach
+        // ideal parallelism because we have other programs working with us ^_^ ^_^.
         System.out.println("Speed up  = sequential runtime / parallel runtime");
         System.out.println("Speed up: "+sumSeq/sumParr);
 
