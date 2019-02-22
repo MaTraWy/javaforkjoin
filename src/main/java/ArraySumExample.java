@@ -5,7 +5,7 @@ import java.util.concurrent.RecursiveAction;
 /**
  * <h1>Array Sum using java fork join framework</h1>
  * The Array sum using java fork  program implements an application that
- * sum the numbers in array where each number is divided by 3 to increase computation.
+ * sum the numbers in a giant array (contain millions of numbers) also each number is divided by 3 to increase computation.
  * <p>
  * The purpose of this project is for parallel programming tut, where the java fork-join framework exploits
  * the multi-core processor where it divides the array (task) into sub-array (subtask) and distributes
